@@ -4,27 +4,18 @@ pipeline {
     agent any
     
     environment {
-        // Update the main app image name to match the deployment file
         DOCKER_IMAGE_NAME = 'rohan700/easyshop-app'
-        DOCKER_MIGRATION_IMAGE_NAME = 'trainwithshubham/easyshop-migration'
+        DOCKER_MIGRATION_IMAGE_NAME = 'rohan700/easyshop-migration'
         DOCKER_IMAGE_TAG = "${BUILD_NUMBER}"
         GITHUB_CREDENTIALS = credentials('github-credentials')
         GIT_BRANCH = "master"
     }
     
     stages {
-        stage('Cleanup Workspace') {
-            steps {
-                script {
-                    clean_ws()
-                }
-            }
-        }
-        
         stage('Clone Repository') {
             steps {
                 script {
-                    clone("https://github.com/LondheShubham153/tws-e-commerce-app.git","master")
+                    clone("https://github.com/rohandeb2/Easy-shop-E-commerce.git", "master")
                 }
             }
         }
@@ -70,8 +61,6 @@ pipeline {
         stage('Security Scan with Trivy') {
             steps {
                 script {
-                    // Create directory for results
-                  
                     trivy_scan()
                     
                 }
@@ -115,7 +104,7 @@ pipeline {
                         manifestsPath: 'kubernetes',
                         gitCredentials: 'github-credentials',
                         gitUserName: 'Jenkins CI',
-                        gitUserEmail: 'shubhamnath5@gmail.com'
+                        gitUserEmail: 'ruhondeb28@gmail.com'
                     )
                 }
             }
