@@ -20,7 +20,7 @@ resource "aws_key_pair" "deployer" {
 resource "aws_security_group" "allow_user_to_connect" {
   name        = "allow TLS"
   description = "Allow user to connect"
-  vpc_id      = aws_default_vpc.default.id
+  vpc_id = module.vpc.vpc_id
   ingress {
     description = "port 22 allow"
     from_port   = 22
