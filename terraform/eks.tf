@@ -22,8 +22,6 @@ module "eks" {
   subnet_ids = module.vpc.private_subnets
   control_plane_subnet_ids = module.vpc.intra_subnets
 
-  # EKS Managed Node Group(s)
-
   eks_managed_node_group_defaults = {
 
     instance_types = ["t2.large"]
@@ -44,7 +42,7 @@ module "eks" {
       capacity_type  = "SPOT"
 
       disk_size = 35 
-      use_custom_launch_template = false  # Important to apply disk size!
+      use_custom_launch_template = false  
 
       tags = {
         Name = "tws-demo-ng"
