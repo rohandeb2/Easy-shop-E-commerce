@@ -149,14 +149,8 @@ docker compose down -v && docker compose up -d
 
 ---
 
-## 📝 License
-
-MIT — see [LICENSE](LICENSE) for details.
-
----
-
 <div align="center">
-  Made with ❤️ by <a href="https://github.com/rohandeb2"><b>Rohan Deb</b></a>
+  Made with ❤️ by <a href="https://github.com/rohandeb2"><b>Ruhon Deb</b></a>
   &nbsp;·&nbsp;
   <a href="DEPLOYMENT.md">📖 Full Deployment Guide</a>
 </div>
