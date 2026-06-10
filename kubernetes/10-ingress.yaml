@@ -11,7 +11,7 @@ spec:
   tls:
   - hosts:
     - easyshop.letsdeployit.com
-    secretName: easyshop-tls-secret  # Cert-Manager will manage this
+    secretName: easyshop-tls-secret  
   rules:
   - host: easyshop.letsdeployit.com
     http:
